@@ -22,6 +22,11 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         val notification = remoteMessage.notification
         val data = remoteMessage.data
 
+        // Exemplo pegando informações do Data
+        val chave1 = data["Chave1"]
+
+        println(chave1) // Valor 1
+
         notification?.let {
             pushNotification(it.title, it.body)
         }
